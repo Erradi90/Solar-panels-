@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الشروط والأحكام - رعاية الأطفال</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Custom Styles -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            right: 0;
+            background-color: #667eea;
+            transition: width 0.3s ease-in-out;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation Bar -->
+    <nav class="fixed w-full z-50 bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <!-- Logo and Brand -->
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-3">
+                        <svg class="h-8 w-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+                            </path>
+                        </svg>
+                        <span class="text-xl font-bold text-indigo-600">رعاية الأطفال</span>
+                    </a>
+                </div>
+
+                <!-- Navigation Links - Desktop -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link text-gray-600 hover:text-indigo-600 transition-colors">الرئيسية</a>
+                    <a href="index.html#blog" class="nav-link text-gray-600 hover:text-indigo-600 transition-colors">المدونة</a>
+                    <a href="index.html#help" class="nav-link text-gray-600 hover:text-indigo-600 transition-colors">طلب المساعدة</a>
+                    <a href="about.html" class="nav-link text-gray-600 hover:text-indigo-600 transition-colors">من نحن</a>
+                    <a href="terms.html" class="nav-link text-indigo-600 font-medium">الشروط والأحكام</a>
+                    <a href="privacy-policy.html" class="nav-link text-gray-600 hover:text-indigo-600 transition-colors">سياسة الخصوصية</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuBtn" class="mobile-menu-button p-2">
+                        <svg class="h-6 w-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-indigo-50">
+                    الرئيسية
+                </a>
+                <a href="index.html#blog" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-indigo-50">
+                    المدونة
+                </a>
+                <a href="index.html#help" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-indigo-50">
+                    طلب المساعدة
+                </a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-indigo-50">
+                    من نحن
+                </a>
+                <a href="terms.html" class="block px-3 py-2 rounded-md text-base font-medium text-indigo-600 bg-indigo-50">
+                    الشروط والأحكام
+                </a>
+                <a href="privacy-policy.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-indigo-50">
+                    سياسة الخصوصية
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="hero-gradient pt-24 pb-12">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl font-bold text-white text-center">الشروط والأحكام</h1>
+            <p class="text-xl text-gray-100 text-center mt-4">يرجى قراءة هذه الشروط بعناية قبل استخدام موقعنا</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-12">
+        <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-md p-8">
+            <div class="prose prose-lg max-w-none">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">مقدمة</h2>
+                <p class="text-gray-600 mb-6">
+                    تحدد هذه الشروط والأحكام القواعد والقوانين لاستخدام موقع رعاية الأطفال، الموجود على الرابط: www.infantcare.example.com.
+                </p>
+                <p class="text-gray-600 mb-6">
+                    من خلال الوصول إلى هذا الموقع، نفترض أنك تقبل هذه الشروط والأحكام بالكامل. لا تستمر في استخدام موقع رعاية الأطفال إذا كنت لا توافق على جميع الشروط والأحكام المذكورة في هذه الصفحة.
+                </p>
+                <p class="text-gray-600 mb-6">
+                    تنطبق المصطلحات التالية على هذه الشروط والأحكام وبيان الخصوصية وإشعار إخلاء المسؤولية وجميع الاتفاقيات: "العميل" و "أنت" و "الخاص بك" تشير إليك، الشخص الذي يصل إلى هذا الموقع ويقبل شروط وأحكام الشركة. "الشركة" و "أنفسنا" و "نحن" و "لنا" تشير إلى شركتنا. "الطرف" أو "الأطراف" أو "نحن" تشير إلى كل من العميل والشركة، أو إما العميل أو الشركة. جميع المصطلحات تشير إلى العرض والقبول والنظر في الدفع اللازم للقيام بعملية مساعدتنا للعميل بالطريقة الأنسب، سواء من خلال اجتماعات رسمية لفترة محددة، أو أي وسيلة أخرى، لغرض صريح هو تلبية احتياجات العميل فيما يتعلق بتوفير خدمات الشركة المعلنة، وفقًا لقانون المملكة العربية السعودية المعمول به. أي استخدام للمصطلحات المذكورة أعلاه أو غيرها من الكلمات بصيغة المفرد أو الجمع أو الضمائر يعتبر قابلاً للتبادل وبالتالي يشير إلى نفس الشيء.
+                </p>
+
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">ملفات تعريف الارتباط</h2>
+                <p class="text-gray-600 mb-6">
+                    نحن نستخدم ملفات تعريف الارتباط. من خلال الوصول إلى موقع رعاية الأطفال، وافقت على استخدام ملفات تعريف الارتباط وفقًا لسياسة الخصوصية الخاصة بموقع رعاية الأطفال.
+                </p>
+                <p class="text-gray-600 mb-6">
+                    تستخدم معظم مواقع الويب التفاعلية ملفات تعريف الارتباط للسماح لنا باسترداد تفاصيل المستخدم لكل زيارة. تستخدم ملفات تعريف الارتباط بواسطة موقعنا لتمكين وظائف مناطق معينة لتسهيل زيارة الأشخاص لموقعنا. قد يستخدم بعض شركائنا المنتسبين/المعلنين أيضًا ملفات تعريف الارتباط.
+                </p>
+
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">الترخيص</h2>
+                <p class="text-gray-600 mb-6">
+                    ما لم يُذكر خلاف ذلك، فإن موقع رعاية الأطفال و/أو المرخصين له يمتلكون حقوق الملكية الفكرية لجميع المواد الموجودة على موقع رعاية الأطفال. جميع حقوق الملكية الفكرية محفوظة. يمكنك الوصول إلى هذا من موقع رعاية الأطفال للاستخدام الشخصي الخاص بك وفقًا للقيود المنصوص عليها في هذه الشروط والأحكام.
+                </p>
+                <p class="text-gray-600 mb-6">
+                    يجب عليك عدم:
+                </p>
+                <ul class="list-disc list-inside text-gray-600 mb-6">
+                    <li>إعادة نشر المواد من موقع رعاية الأطفال</li>
+                    <li>بيع أو تأجير أو ترخيص من الباطن مواد من موقع رعاية الأطفال</li>
+                    <li>إعادة إنتاج أو نسخ أو نسخ مواد من موقع رعاية الأطفال</li>
+                    <li>إعادة توزيع المحتوى من موقع رعاية الأطفال</li>
+                </ul>
+                <p class="text-gray-600 mb-6">
+                    تنتهي هذه الاتفاقية عند إنهائها من قبلك أو من قبلنا. يمكنك إنهاء هذه الاتفاقية في أي وقت عن طريق إخطارنا كتابيًا برغبتك في إنهاء هذه الاتفاقية.
+                </p>
+                <p class="text-gray-600 mb-6">
+                    إذا وجدنا، وفقًا لتقديرنا الخاص، أنك فشلت، أو نشك في أنك فشلت، في الامتثال لأي بند من بنود هذه الاتفاقية، فقد ننهي هذه الاتفاقية في أي وقت دون إشعار مسبق، وستظل مسؤولاً عن جميع المبالغ المستحقة حتى تاريخ الإنهاء وبما في ذلك؛ و/أو بالتالي قد نحرمك من الوصول إلى خدماتنا (أو أي جزء منها).
+                </p>
+
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">المحتوى والتعليقات</h2>
+                <p class="text-gray-600 mb-6">
+                    أجزاء من هذا الموقع تقدم فرصة للمستخدمين لنشر وتبادل الآراء والمعلومات في مناطق معينة من الموقع. لا يقوم موقع رعاية الأطفال بتصفية أو تحرير أو نشر أو مراجعة التعليقات قبل وجودها على الموقع. لا تعكس التعليقات آراء ومعتقدات موقع رعاية الأطفال أو الشركات التابعة له أو الشركاء التابعين له. تعكس التعليقات آراء ومعتقدات الشخص الذي ينشر آرائه ومعتقداته. إلى الحد الذي يسمح به القانون المعمول به، لن يكون موقع رعاية الأطفال مسؤولاً عن التعليقات أو عن أي مسؤولية أو ضرر أو نفقات ناتجة و/أو متكبدة نتيجة لأي استخدام و/أو نشر و/أو ظهور للتعليقات على هذا الموقع.
+                </p>
+                <p class="text-gray-600 mb-6">
+                    يحتفظ موقع رعاية الأطفال بالحق في مراقبة جميع التعليقات وإزالة أي تعليقات يمكن اعتبارها غير مناسبة أو مسيئة أو تسبب خرقًا لهذه الشروط والأحكام.
+                </p>
+                <p class="text-gray-600 mb-6">
+                    أنت تضمن وتقر بما يلي:
+                </p>
+                <ul class="list-disc list-inside text-gray-600 mb-6">
+                    <li>أنت مؤهل ولديك جميع الحقوق اللازمة لنشر التعليقات على موقعنا وأن لديك جميع التراخيص والموافقات اللازمة للقيام بذلك؛</li>
+                    <li>لا تنتهك التعليقات أي حقوق ملكية فكرية، بما في ذلك على سبيل المثال لا الحصر حقوق النشر أو براءات الاختراع أو العلامات التجارية لأي طرف ثالث؛</li>
+                    <li>لا تحتوي التعليقات على أي مواد تشهيرية أو تشهيرية أو مسيئة أو غير لائقة أو غير قانونية بأي شكل من الأشكال، والتي تعتبر انتهاكًا للخصوصية</li>
+                    <li>لن تستخدم التعليقات للتماس أو الترويج للأعمال التجارية أو العرفية أو تقديم الأنشطة التجارية أو الأنشطة غير القانونية.</li>
+                </ul>
+                <p class="text-gray-600 mb-6">
+                    أنت بموجب هذا تمنح موقع رعاية الأطفال ترخيصًا غير حصري لاستخدام وإعادة إنتاج وتحرير ونشر أي من تعليقاتك بأي شكل أو وسيط أو تقنية معروفة الآن أو تم تطويرها لاحقًا.
+                </p>
+
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">الارتباط التشعبي بالمحتوى الخاص بنا</h2>
+                <p class="text-gray-600 mb-6">
+                    قد تقوم المنظمات التالية بالارتباط بموقعنا دون موافقة كتابية مسبقة:
+                </p>
+                <ul class="list-disc list-inside text-gray-600 mb-6">
+                    <li>وكالات حكومية؛</li>
+                    <li>محركات البحث؛</li>
+                    <li>المنظمات الإخبارية؛</li>
+                    <li>موزعو الدليل عبر الإنترنت قد يرتبطون بموقعنا بنفس الطريقة التي يرتبطون بها بمواقع الويب الخاصة بالشركات المدرجة الأخرى؛ و</li>
+                    <li>الشركات المعتمدة على مستوى النظام باستثناء طلب المنظمات غير الربحية ومراكز التسوق الخيرية ومجموعات جمع التبرعات الخيرية التي قد لا ترتبط بموقعنا.</li>
+                </ul>
+                <p class="text-gray-600 mb-6">
+                    قد تقوم هذه المنظمات بالارتباط بصفحتنا الرئيسية أو المنشورات أو المعلومات الأخرى الخاصة بالموقع طالما أن الارتباط: (أ) ليس مضللاً بأي شكل من الأشكال؛ (ب) لا يعني ضمناً الرعاية أو التأييد أو الموافقة على الطرف المرتبط ومنتجاته و/أو خدماته؛ و (ج) يناسب سياق موقع الطرف المرتبط.
+                </p>
+                <p class="text-gray-600 mb-6">
+                    قد ننظر ونوافق على طلبات الارتباط الأخرى من الأنواع التالية من المنظمات:
+                </p>
+                <ul class="list-disc list-inside text-gray-600 mb-6">
+                    <li>مصادر معلومات المستهلك و/أو الأعمال المعروفة شائعًا؛</li>
+                    <li>مواقع مجتمع dot.com؛</li>
+                    <li>الجمعيات أو المجموعات الأخرى التي تمثل الجمعيات الخيرية؛</li>
+                    <li>موزعي الدليل عبر الإنترنت؛</li>
+                    <li>بوابات الإنترنت؛</li>
+                    <li>شركات المحاسبة والقانون والاستشارات؛ و</li>
+                    <li>المؤسسات التعليمية والجمعيات التجارية.</li>
+                </ul>
+                <p class="text-gray-600 mb-6">
+                    سنوافق على طلبات الارتباط من هذه المنظمات إذا قررنا أن: (أ) الارتباط لن يجعلنا ننظر بشكل غير مواتٍ إلى أنفسنا أو إلى أعمالنا المعتمدة؛ (ب) المنظمة ليس لديها سجلات سلبية معنا؛ (ج) الفائدة لنا من ظهور الارتباط التشعبي تعوض عن غياب موقع رعاية الأطفال؛ و (د) الارتباط في سياق معلومات الموارد العامة.
+                </p>
+                <p class="text-gray-600 mb-6">
+                    قد ترتبط هذه المنظمات بصفحتنا الرئيسية طالما أن الارتباط: (أ) ليس مضللاً بأي شكل من الأشكال؛ (ب) لا يعني ضمناً الرعاية أو التأييد أو الموافقة على الطرف المرتبط ومنتجاته أو خدماته؛ و (ج) يناسب سياق موقع الطرف المرتبط.
+                </p>
+                <p class="text-gray-600 mb-6">
+                    إذا كنت إحدى المنظمات المذكورة في الفقرة 2 أعلاه وكنت مهتمًا بالارتباط بموقعنا، فيجب عليك إبلاغنا عن طريق إرسال بريد إلكتروني إلى موقع رعاية الأطفال. يرجى تضمين اسمك وعنوان مؤسستك ومعلومات الاتصال الخاصة بك بالإضافة إلى عنوان URL لموقعك وقائمة بأي عناوين URL تنوي الارتباط بموقعنا وقائمة بعناوين URL على موقعنا والتي ترغب في الارتباط بها. انتظر أسبوعين أو 3 أسابيع للرد.
+                </p>
+                <p class="text-gray-600 mb-6">
+                    قد ترتبط المنظمات المعتمدة بموقعنا على النحو التالي:
+                </p>
+                <ul class="list-disc list-inside text-gray-600 mb-6">
+                    <li>باستخدام اسم شركتنا؛ أو</li>
+                    <li>باستخدام محدد موقع الموارد الموحد المرتبط به؛ أو</li>
+                    <li>باستخدام أي وصف آخر لموقعنا مرتبط به يكون منطقيًا في سياق ومنسق محتوى موقع الطرف المرتبط.</li>
+                </ul>
+                <p class="text-gray-600 mb-6">
+                    لن يُسمح باستخدام شعار موقع رعاية الأطفال أو أي عمل فني آخر للارتباط في حالة عدم وجود اتفاقية ترخيص للعلامة التجارية.
+                </p>
+
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">إخلاء المسؤولية</h2>
+                <p class="text-gray-600 mb-6">
+                    إلى أقصى حد يسمح به القانون المعمول به، نستبعد جميع الإقرارات والضمانات والشروط المتعلقة بموقعنا واستخدام هذا الموقع. لا شيء في إخلاء المسؤولية هذا:
+                </p>
+                <ul class="list-disc list-inside text-gray-600 mb-6">
+                    <li>يحد أو يستبعد مسؤوليتنا أو مسؤوليتك عن الوفاة أو الإصابة الشخصية؛</li>
+                    <li>يحد أو يستبعد مسؤوليتنا أو مسؤوليتك عن الاحتيال أو التحريف الاحتيالي؛</li>
+                    <li>يحد أي من مسؤولياتنا أو مسؤولياتك بأي طريقة غير مسموح بها بموجب القانون المعمول به؛ أو</li>
+                    <li>يستبعد أي من مسؤولياتنا أو مسؤولياتك التي قد لا تكون مستبعدة بموجب القانون المعمول به.</li>
+                </ul>
+                <p class="text-gray-600 mb-6">
+                    القيود والاستبعادات للمسؤولية المنصوص عليها في هذا القسم وفي أماكن أخرى في إخلاء المسؤولية هذا: (أ) تخضع للفقرة السابقة؛ و (ب) تحكم جميع المسؤوليات الناشئة بموجب إخلاء المسؤولية، بما في ذلك المسؤوليات الناشئة في العقد، في الضرر وعن خرق الواجب القانوني.
+                </p>
+                <p class="text-gray-600 mb-6">
+                    طالما أن الموقع والمعلومات والخدمات على الموقع مقدمة مجانًا، فلن نكون مسؤولين عن أي خسارة أو ضرر من أي نوع.
+                </p>
+
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">الاتصال بنا</h2>
+                <p class="text-gray-600 mb-6">
+                    إذا كانت لديك أي أسئلة حول هذه الشروط والأحكام، يرجى الاتصال بنا على:
+                </p>
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <p class="text-gray-700">رعاية الأطفال</p>
+                    <p class="text-gray-700">البريد الإلكتروني: info@infantcare.example.com</p>
+                    <p class="text-gray-700">الهاتف: +966 12 345 6789</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">رعاية الأطفال</h3>
+                    <p class="text-gray-400">نقدم لك كل ما تحتاجه لرعاية طفلك بأفضل طريقة ممكنة.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">روابط سريعة</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">الرئيسية</a></li>
+                        <li><a href="index.html#blog" class="text-gray-400 hover:text-white transition-colors">المدونة</a></li>
+                        <li><a href="index.html#help" class="text-gray-400 hover:text-white transition-colors">طلب المساعدة</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">من نحن</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">الشروط والسياسات</h3>
+                    <ul class="space-y-2">
+                        <li><a href="terms.html" class="text-gray-400 hover:text-white transition-colors">الشروط والأحكام</a></li>
+                        <li><a href="privacy-policy.html" class="text-gray-400 hover:text-white transition-colors">سياسة الخصوصية</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">تواصل معنا</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <svg class="h-5 w-5 ml-2 text-indigo-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                            </svg>
+                            <span class="text-gray-400">info@infantcare.example.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="h-5 w-5 ml-2 text-indigo-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                            </svg>
+                            <span class="text-gray-400">+966 12 345 6789</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2025 رعاية الأطفال. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

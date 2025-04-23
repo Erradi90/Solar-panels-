@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سياسة الخصوصية - رعاية الأطفال</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Custom Styles -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            right: 0;
+            background-color: #667eea;
+            transition: width 0.3s ease-in-out;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation Bar -->
+    <nav class="fixed w-full z-50 bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <!-- Logo and Brand -->
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-3">
+                        <svg class="h-8 w-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+                            </path>
+                        </svg>
+                        <span class="text-xl font-bold text-indigo-600">رعاية الأطفال</span>
+                    </a>
+                </div>
+
+                <!-- Navigation Links - Desktop -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link text-gray-600 hover:text-indigo-600 transition-colors">الرئيسية</a>
+                    <a href="index.html#blog" class="nav-link text-gray-600 hover:text-indigo-600 transition-colors">المدونة</a>
+                    <a href="index.html#help" class="nav-link text-gray-600 hover:text-indigo-600 transition-colors">طلب المساعدة</a>
+                    <a href="about.html" class="nav-link text-gray-600 hover:text-indigo-600 transition-colors">من نحن</a>
+                    <a href="terms.html" class="nav-link text-gray-600 hover:text-indigo-600 transition-colors">الشروط والأحكام</a>
+                    <a href="privacy-policy.html" class="nav-link text-indigo-600 font-medium">سياسة الخصوصية</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuBtn" class="mobile-menu-button p-2">
+                        <svg class="h-6 w-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-indigo-50">
+                    الرئيسية
+                </a>
+                <a href="index.html#blog" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-indigo-50">
+                    المدونة
+                </a>
+                <a href="index.html#help" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-indigo-50">
+                    طلب المساعدة
+                </a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-indigo-50">
+                    من نحن
+                </a>
+                <a href="terms.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-indigo-50">
+                    الشروط والأحكام
+                </a>
+                <a href="privacy-policy.html" class="block px-3 py-2 rounded-md text-base font-medium text-indigo-600 bg-indigo-50">
+                    سياسة الخصوصية
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="hero-gradient pt-24 pb-12">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl font-bold text-white text-center">سياسة الخصوصية</h1>
+            <p class="text-xl text-gray-100 text-center mt-4">نلتزم بحماية خصوصية بياناتك الشخصية</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-12">
+        <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-md p-8">
+            <div class="prose prose-lg max-w-none">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">مقدمة</h2>
+                <p class="text-gray-600 mb-6">
+                    نحن في موقع رعاية الأطفال نقدر خصوصيتك ونلتزم بحماية بياناتك الشخصية. تصف سياسة الخصوصية هذه كيفية جمعنا واستخدامنا للمعلومات الشخصية التي تقدمها لنا عند استخدام موقعنا الإلكتروني.
+                </p>
+                <p class="text-gray-600 mb-6">
+                    نحن نلتزم بضمان أن خصوصيتك محمية. عندما نطلب منك تقديم معلومات معينة يمكن من خلالها التعرف عليك عند استخدام هذا الموقع، يمكنك أن تثق بأنه سيتم استخدامها فقط وفقًا لبيان الخصوصية هذا.
+                </p>
+                <p class="text-gray-600 mb-6">
+                    قد نقوم بتغيير سياسة الخصوصية هذه من وقت لآخر من خلال تحديث هذه الصفحة. يجب عليك مراجعة هذه الصفحة من وقت لآخر للتأكد من أنك راضٍ عن أي تغييرات.
+                </p>
+
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">المعلومات التي نجمعها</h2>
+                <p class="text-gray-600 mb-6">
+                    قد نقوم بجمع المعلومات التالية:
+                </p>
+                <ul class="list-disc list-inside text-gray-600 mb-6">
+                    <li>الاسم واللقب</li>
+                    <li>معلومات الاتصال بما في ذلك عنوان البريد الإلكتروني ورقم الهاتف</li>
+                    <li>المعلومات الديموغرافية مثل الرمز البريدي والتفضيلات والاهتمامات</li>
+                    <li>معلومات أخرى ذات صلة باستطلاعات العملاء و/أو العروض</li>
+                    <li>بيانات حول استخدامك للموقع وتفاعلك معه</li>
+                </ul>
+
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">ما نفعله بالمعلومات التي نجمعها</h2>
+                <p class="text-gray-600 mb-6">
+                    نحتاج إلى هذه المعلومات لفهم احتياجاتك وتقديم خدمة أفضل لك، وعلى وجه الخصوص للأسباب التالية:
+                </p>
+                <ul class="list-disc list-inside text-gray-600 mb-6">
+                    <li>الاحتفاظ بسجلات داخلية</li>
+                    <li>تحسين منتجاتنا وخدماتنا</li>
+                    <li>إرسال رسائل بريد إلكتروني ترويجية حول منتجات جديدة أو خدمات خاصة أو معلومات أخرى نعتقد أنها قد تكون مثيرة للاهتمام بالنسبة لك</li>
+                    <li>الاتصال بك لأغراض أبحاث السوق من وقت لآخر</li>
+                    <li>تخصيص موقعنا الإلكتروني وفقًا لاهتماماتك</li>
+                </ul>
+
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">الأمان</h2>
+                <p class="text-gray-600 mb-6">
+                    نحن ملتزمون بضمان أمان معلوماتك. من أجل منع الوصول غير المصرح به أو الكشف عنها، وضعنا إجراءات مادية وإلكترونية وإدارية مناسبة لحماية المعلومات التي نجمعها عبر الإنترنت والحفاظ عليها.
+                </p>
+
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">ملفات تعريف الارتباط</h2>
+                <p class="text-gray-600 mb-6">
+                    ملف تعريف الارتباط هو ملف صغير يطلب الإذن ليتم وضعه على القرص الصلب لجهاز الكمبيوتر الخاص بك. بمجرد موافقتك، تتم إضافة الملف ويساعد ملف تعريف الارتباط في تحليل حركة الويب أو يتيح لك معرفة متى تزور موقعًا معينًا.
+                </p>
+                <p class="text-gray-600 mb-6">
+                    نحن نستخدم ملفات تعريف الارتباط لتحليل حركة البيانات على موقعنا، مما يساعدنا على تحسين موقعنا الإلكتروني لتلبية احتياجات العملاء. نستخدم هذه المعلومات لأغراض التحليل الإحصائي فقط، وبعد ذلك يتم إزالة البيانات من النظام.
+                </p>
+                <p class="text-gray-600 mb-6">
+                    بشكل عام، تساعدك ملفات تعريف الارتباط على توفير تجربة أفضل على موقع الويب، من خلال تمكيننا من مراقبة الصفحات التي تجدها مفيدة. لا يمنحنا ملف تعريف الارتباط حق الوصول إلى جهاز الكمبيوتر الخاص بك أو أي معلومات عنك، بخلاف البيانات التي تختار مشاركتها معنا.
+                </p>
+                <p class="text-gray-600 mb-6">
+                    يمكنك اختيار قبول أو رفض ملفات تعريف الارتباط. تقبل معظم متصفحات الويب ملفات تعريف الارتباط تلقائيًا، ولكن يمكنك عادةً تعديل إعدادات المتصفح لرفض ملفات تعريف الارتباط إذا كنت تفضل ذلك. قد يمنعك هذا من الاستفادة الكاملة من موقع الويب.
+                </p>
+
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">الروابط لمواقع أخرى</h2>
+                <p class="text-gray-600 mb-6">
+                    قد يحتوي موقعنا على روابط لمواقع أخرى ذات أهمية. ومع ذلك، بمجرد استخدام هذه الروابط لمغادرة موقعنا، يجب أن تلاحظ أننا لا نملك أي سيطرة على هذا الموقع الآخر. لذلك، لا يمكننا أن نكون مسؤولين عن حماية وخصوصية أي معلومات تقدمها أثناء زيارة هذه المواقع وهذه المواقع لا تخضع لبيان الخصوصية هذا. يجب عليك توخي الحذر وقراءة بيان الخصوصية المطبق على موقع الويب المعني.
+                </p>
+
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">التحكم في معلوماتك الشخصية</h2>
+                <p class="text-gray-600 mb-6">
+                    يمكنك اختيار تقييد جمع أو استخدام معلوماتك الشخصية بالطرق التالية:
+                </p>
+                <ul class="list-disc list-inside text-gray-600 mb-6">
+                    <li>عندما يُطلب منك ملء نموذج على الموقع، ابحث عن المربع الذي يمكنك النقر عليه للإشارة إلى أنك لا ترغب في استخدام المعلومات لأغراض التسويق المباشر</li>
+                    <li>إذا كنت قد وافقت مسبقًا على استخدام معلوماتك الشخصية للتسويق المباشر، يمكنك تغيير رأيك في أي وقت عن طريق الاتصال بنا</li>
+                </ul>
+                <p class="text-gray-600 mb-6">
+                    لن نبيع أو نوزع أو نؤجر معلوماتك الشخصية لأطراف ثالثة ما لم يكن لدينا إذن منك أو يُطلب منا ذلك بموجب القانون. قد نستخدم معلوماتك الشخصية لإرسال معلومات ترويجية حول أطراف ثالثة نعتقد أنها قد تكون مثيرة للاهتمام بالنسبة لك، إذا أخبرتنا أنك ترغب في ذلك.
+                </p>
+                <p class="text-gray-600 mb-6">
+                    يمكنك طلب تفاصيل المعلومات الشخصية التي نحتفظ بها عنك بموجب قانون حماية البيانات. إذا كنت ترغب في الحصول على نسخة من المعلومات المحتفظ بها عنك، يرجى الاتصال بنا.
+                </p>
+                <p class="text-gray-600 mb-6">
+                    إذا كنت تعتقد أن أي معلومات نحتفظ بها عنك غير صحيحة أو غير كاملة، يرجى الكتابة إلينا أو مراسلتنا عبر البريد الإلكتروني في أقرب وقت ممكن. سنقوم على الفور بتصحيح أي معلومات تبين أنها غير صحيحة.
+                </p>
+
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">الاتصال بنا</h2>
+                <p class="text-gray-600 mb-6">
+                    إذا كانت لديك أي أسئلة حول سياسة الخصوصية هذه أو ممارسات هذا الموقع أو تعاملك مع هذا الموقع، يرجى الاتصال بنا على:
+                </p>
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <p class="text-gray-700">رعاية الأطفال</p>
+                    <p class="text-gray-700">البريد الإلكتروني: info@infantcare.example.com</p>
+                    <p class="text-gray-700">الهاتف: +966 12 345 6789</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">رعاية الأطفال</h3>
+                    <p class="text-gray-400">نقدم لك كل ما تحتاجه لرعاية طفلك بأفضل طريقة ممكنة.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">روابط سريعة</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">الرئيسية</a></li>
+                        <li><a href="index.html#blog" class="text-gray-400 hover:text-white transition-colors">المدونة</a></li>
+                        <li><a href="index.html#help" class="text-gray-400 hover:text-white transition-colors">طلب المساعدة</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">من نحن</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">الشروط والسياسات</h3>
+                    <ul class="space-y-2">
+                        <li><a href="terms.html" class="text-gray-400 hover:text-white transition-colors">الشروط والأحكام</a></li>
+                        <li><a href="privacy-policy.html" class="text-gray-400 hover:text-white transition-colors">سياسة الخصوصية</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">تواصل معنا</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <svg class="h-5 w-5 ml-2 text-indigo-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                            </svg>
+                            <span class="text-gray-400">info@infantcare.example.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="h-5 w-5 ml-2 text-indigo-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                            </svg>
+                            <span class="text-gray-400">+966 12 345 6789</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2025 رعاية الأطفال. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
