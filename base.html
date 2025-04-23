@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hossain Erradi - Portfolio</title>
+    <!-- Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1a56db",
+              secondary: "#2563eb",
+              text: "#1f2937",
+              background: "#ffffff",
+              siemens: {
+                primary: '#009999',
+                secondary: '#004d4d',
+                accent: '#00cc99',
+                gray: '#4d4d4d',
+                light: '#f2f2f2'
+              }
+            },
+            fontFamily: {
+              sans: ['Siemens Sans', 'Arial', 'sans-serif']
+            }
+          },
+        },
+      };
+    </script>
+    <style>
+      /* Previous styles remain the same */
+
+      /* Footer Styles */
+      .footer {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        color: white;
+        padding: 4rem 2rem 2rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .footer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(
+          90deg,
+          #ffffff 0%,
+          rgba(255, 255, 255, 0.8) 50%,
+          rgba(255, 255, 255, 0.4) 100%
+        );
+      }
+
+      .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 3rem;
+      }
+
+      .footer-section {
+        position: relative;
+      }
+
+      .footer-section h3 {
+        color: white;
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        position: relative;
+        padding-bottom: 0.5rem;
+      }
+
+      .footer-section h3::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 2px;
+        background: white;
+        transition: width 0.3s ease;
+      }
+
+      .footer-section:hover h3::after {
+        width: 75px;
+      }
+
+      .footer-links {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer-links li {
+        margin-bottom: 0.75rem;
+      }
+
+      .footer-links a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .footer-links a:hover {
+        color: white;
+        transform: translateX(5px);
+      }
+
+      .footer-contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .contact-item svg {
+        width: 20px;
+        height: 20px;
+        fill: white;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+
+      .social-link {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+      }
+
+      .social-link:hover {
+        background: white;
+        transform: translateY(-3px);
+      }
+
+      .social-link:hover svg {
+        fill: var(--primary-color);
+      }
+
+      .social-link svg {
+        width: 20px;
+        height: 20px;
+        fill: white;
+        transition: fill 0.3s ease;
+      }
+
+      .footer-bottom {
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.9rem;
+      }
+
+      .footer-bottom a {
+        color: white;
+        text-decoration: none;
+        transition: opacity 0.3s ease;
+      }
+
+      .footer-bottom a:hover {
+        opacity: 0.8;
+      }
+
+      .footer-badges {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        margin-top: 1rem;
+      }
+
+      .footer-badge {
+        padding: 0.5rem 1rem;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        font-size: 0.8rem;
+      }
+
+      @media (max-width: 768px) {
+        .footer-content {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+
+        .footer-section {
+          text-align: center;
+        }
+
+        .footer-section h3::after {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        .social-links {
+          justify-content: center;
+        }
+
+        .footer-links a:hover {
+          transform: none;
+        }
+      }
+
+      [data-theme="dark"] .footer {
+        background: linear-gradient(135deg, #2d3748, #1a202c);
+      }
+      .stat-number.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .process-section {
+        position: relative;
+      }
+
+      .process-timeline .timeline-item {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease;
+      }
+
+      .timeline-item.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .timeline-icon {
+        box-shadow: 0 0 15px rgba(0, 153, 153, 0.5);
+      }
+
+      .timeline-content {
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      @media (max-width: 768px) {
+        .timeline-content {
+          margin-left: auto !important;
+          margin-right: auto !important;
+          width: 90%;
+        }
+
+        .process-timeline .absolute {
+          left: 20px !important;
+        }
+
+        .timeline-icon {
+          display: none;
+        }
+      }
+
+      /* Scroll Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .scroll-animate {
+        opacity: 0;
+        animation: fadeInUp 0.6s ease forwards;
+      }
+
+      .scroll-animate.delay-100 {
+        animation-delay: 100ms;
+      }
+
+      .scroll-animate.delay-200 {
+        animation-delay: 200ms;
+      }
+
+      /* Improved Mobile Responsiveness */
+      @media (max-width: 640px) {
+        .container {
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+        
+        h1 {
+          font-size: 2.5rem !important;
+          line-height: 1.2 !important;
+        }
+        
+        h2 {
+          font-size: 2rem !important;
+        }
+        
+        .grid {
+          grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+        }
+        
+        .stat-card {
+          padding: 1.5rem !important;
+        }
+        
+        .timeline-content {
+          margin: 0 !important;
+          width: 100% !important;
+        }
+      }
+
+      /* Add smooth scrolling to all elements */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Progress bar */
+      .scroll-progress-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(to right, var(--tw-gradient-from), var(--tw-gradient-to));
+        transform-origin: 0%;
+        z-index: 100;
+      }
+    </style>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Keyboard Navigation
+  document.addEventListener('keydown', function(e) {
+    // ESC key closes mobile menu
+    if (e.key === 'Escape' && window.mobileMenuOpen) {
+      window.mobileMenuOpen = false;
+    }
+
+    // Arrow keys for section navigation
+    if (e.altKey) {
+      switch(e.key) {
+        case 'ArrowDown':
+          e.preventDefault();
+          navigateToNextSection();
+          break;
+        case 'ArrowUp':
+          e.preventDefault();
+          navigateToPrevSection();
+          break;
+      }
+    }
+  });
+
+  // Section Navigation Functions
+  function navigateToNextSection() {
+    const sections = Array.from(document.querySelectorAll('section'));
+    const currentSection = sections.find(section => {
+      const rect = section.getBoundingClientRect();
+      return rect.top >= 0 && rect.top <= window.innerHeight;
+    });
+    
+    if (currentSection) {
+      const currentIndex = sections.indexOf(currentSection);
+      if (currentIndex < sections.length - 1) {
+        sections[currentIndex + 1].scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }
+
+  function navigateToPrevSection() {
+    const sections = Array.from(document.querySelectorAll('section'));
+    const currentSection = sections.find(section => {
+      const rect = section.getBoundingClientRect();
+      return rect.top >= 0 && rect.top <= window.innerHeight;
+    });
+    
+    if (currentSection) {
+      const currentIndex = sections.indexOf(currentSection);
+      if (currentIndex > 0) {
+        sections[currentIndex - 1].scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }
+
+  // Focus handling for better accessibility
+  const focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+  
+  document.querySelectorAll(focusableElements).forEach(element => {
+    element.addEventListener('focus', function() {
+      this.classList.add('ring-2', 'ring-siemens-primary', 'ring-opacity-50');
+    });
+    
+    element.addEventListener('blur', function() {
+      this.classList.remove('ring-2', 'ring-siemens-primary', 'ring-opacity-50');
+    });
+  });
+
+  // Add ARIA labels and roles
+  document.querySelectorAll('nav').forEach(nav => nav.setAttribute('role', 'navigation'));
+  document.querySelectorAll('main').forEach(main => main.setAttribute('role', 'main'));
+  document.querySelectorAll('button').forEach(button => {
+    if (!button.getAttribute('aria-label')) {
+      button.setAttribute('aria-label', button.textContent.trim());
+    }
+  });
+});
+</script>
+  </head>
+  <body class="font-sans text-text bg-background">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white bg-opacity-95 py-4 shadow-md z-50">
+      <div class="max-w-screen-xl mx-auto flex justify-between items-center px-4">
+        <div class="text-xl font-bold text-siemens-primary">Hossain Erradi</div>
+        <div class="hidden md:flex space-x-8">
+          <a href="#about" class="text-siemens-gray font-medium hover:text-siemens-primary transition-colors">À propos</a>
+          <a href="#services" class="text-siemens-gray font-medium hover:text-siemens-primary transition-colors">Services</a>
+          <a href="#blog" class="text-siemens-gray font-medium hover:text-siemens-primary transition-colors">Blog</a>
+          <a href="#projects" class="text-siemens-gray font-medium hover:text-siemens-primary transition-colors">Projets</a>
+          <a href="#contact" class="text-siemens-gray font-medium hover:text-siemens-primary transition-colors">Contact</a>
+        </div>
+        <div class="flex space-x-4 items-center">
+          <button onclick="switchLanguage('fr')" class="text-siemens-gray font-medium active hover:text-siemens-primary transition-colors">FR</button>
+          <button onclick="switchLanguage('en')" class="text-siemens-gray font-medium opacity-70 hover:text-siemens-primary transition-colors">EN</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center text-center text-white overflow-hidden">
+      <video class="absolute inset-0 w-full h-full object-cover z-[-1]" autoplay muted loop playsinline>
+        <source src="video/hero-background.mp4" type="video/mp4" />
+      </video>
+      <div class="absolute inset-0 bg-gradient-to-b from-siemens-primary/30 to-siemens-secondary/70 z-[-1]"></div>
+      
+      <div class="max-w-4xl px-4 relative" data-aos="fade-up" data-aos-duration="1000">
+        <span class="inline-block text-sm md:text-base bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6 text-white/90">
+          Expert en Automatisation Industrielle
+        </span>
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
+            data-fr="Bienvenue sur mon portfolio professionnel"
+            data-en="Welcome to my professional portfolio">
+          Bienvenue sur mon portfolio professionnel
+        </h1>
+        <p class="text-lg md:text-xl mb-8 text-white/90 max-w-2xl mx-auto"
+           data-fr="Expert en électricité industrielle et automatisation"
+           data-en="Expert in industrial electricity and automation">
+          Expert en électricité industrielle et automatisation
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a href="#contact"
+             class="bg-siemens-primary hover:bg-siemens-secondary text-white py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg inline-flex items-center group">
+            <span data-fr="Contactez-moi" data-en="Contact me">Contactez-moi</span>
+            <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
+          </a>
+          <a href="#services"
+             class="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 inline-flex items-center group">
+            <span data-fr="Découvrir nos services" data-en="Discover our services">Découvrir nos services</span>
+            <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Overlay Pattern -->
+      <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0wIDBoNjB2NjBIMHoiLz48cGF0aCBkPSJNMzYgMzRjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00eiIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utb3BhY2l0eT0iLjA1Ii8+PC9nPjwvc3ZnPg==')] opacity-30"></div>
+    </section>
+
+    <!-- Add custom styles for animations -->
+    <style>
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    .animate-float {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes grain {
+      0%, 100% { transform: translate(0, 0) }
+      10% { transform: translate(-5%, -5%) }
+      20% { transform: translate(-10%, 5%) }
+      30% { transform: translate(5%, -10%) }
+      40% { transform: translate(-5%, 15%) }
+      50% { transform: translate(-10%, 5%) }
+      60% { transform: translate(15%, 0) }
+      70% { transform: translate(0, 10%) }
+      80% { transform: translate(-15%, 0) }
+      90% { transform: translate(10%, 5%) }
+    }
+
+    .grain-overlay {
+      animation: grain 8s steps(10) infinite;
+    }
+    </style>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-siemens-light">
+      <div class="max-w-screen-xl mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-siemens-primary to-siemens-secondary">
+          Nos Services
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up">
+            <div class="mb-6 text-siemens-primary">
+              <svg class="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-siemens-gray mb-4" data-fr="Installation Électrique" data-en="Electrical Installation">
+              Installation Électrique
+            </h3>
+            <p class="text-gray-600" data-fr="Installation de systèmes électriques pour bâtiments résidentiels et commerciaux." data-en="Installation of electrical systems for residential and commercial buildings.">
+              Installation de systèmes électriques pour bâtiments résidentiels et commerciaux.
+            </p>
+          </div>
+
+          <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
+            <div class="mb-6 text-siemens-primary">
+              <svg class="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="12" cy="12" r="4"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-siemens-gray mb-4" data-fr="Énergie Solaire" data-en="Solar Energy">
+              Énergie Solaire
+            </h3>
+            <p class="text-gray-600" data-fr="Installation et maintenance des systèmes d'énergie solaire." data-en="Installation and maintenance of solar energy systems.">
+              Installation et maintenance des systèmes d'énergie solaire.
+            </p>
+          </div>
+
+          <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+            <div class="mb-6 text-siemens-primary">
+              <svg class="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-siemens-gray mb-4" data-fr="Automatisation" data-en="Automation">
+              Automatisation
+            </h3>
+            <p class="text-gray-600" data-fr="Conception et installation de systèmes d'automatisation industrielle." data-en="Design and installation of industrial automation systems.">
+              Conception et installation de systèmes d'automatisation industrielle.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-gradient-to-br from-siemens-primary/5 to-siemens-secondary/5">
+      <div class="max-w-screen-xl mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-siemens-primary to-siemens-secondary">
+          Ce Que Disent Nos Clients
+        </h2>
+
+        <!-- Testimonials Slider -->
+        <div x-data="{ 
+          currentSlide: 0,
+          slides: [
+            {
+              name: 'Jean Dupont',
+              position: 'Directeur Technique',
+              company: 'Industrial Solutions SA',
+              image: 'https://i.pravatar.cc/150?img=1',
+              content: 'Une expertise exceptionnelle en automatisation industrielle. L\'équipe a su répondre parfaitement à nos besoins avec professionnalisme et efficacité.'
+            },
+            {
+              name: 'Marie Laurent',
+              position: 'Chef de Projet',
+              company: 'EcoSolutions',
+              image: 'https://i.pravatar.cc/150?img=2',
+              content: 'L\'installation de notre système d\'énergie solaire a été réalisée avec une précision remarquable. Un excellent service client et un suivi impeccable.'
+            },
+            {
+              name: 'Ahmed Benali',
+              position: 'Directeur des Opérations',
+              company: 'TechnoMaroc',
+              image: 'https://i.pravatar.cc/150?img=3',
+              content: 'Un partenaire fiable et professionnel. Leur expertise en électricité industrielle a grandement contribué à l\'amélioration de notre productivité.'
+            }
+          ]
+        }" class="relative">
+          <div class="overflow-hidden">
+            <div class="flex transition-transform duration-500 ease-out" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
+              <template x-for="(slide, index) in slides" :key="index">
+                <div class="w-full flex-shrink-0 px-4">
+                  <div class="bg-white rounded-xl shadow-lg p-8 mx-auto max-w-2xl">
+                    <div class="flex flex-col items-center text-center">
+                      <img :src="slide.image" :alt="slide.name" class="w-20 h-20 rounded-full mb-4 border-4 border-siemens-primary/20">
+                      <blockquote class="text-lg text-gray-700 mb-6" x-text="slide.content"></blockquote>
+                      <div class="space-y-1">
+                        <h4 class="font-bold text-siemens-gray" x-text="slide.name"></h4>
+                        <p class="text-sm text-gray-500">
+                          <span x-text="slide.position"></span> - <span x-text="slide.company"></span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </template>
+            </div>
+          </div>
+
+          <!-- Navigation Buttons -->
+          <div class="flex justify-center mt-8 space-x-4">
+            <button 
+              @click="currentSlide = (currentSlide - 1 + slides.length) % slides.length"
+              class="p-2 rounded-full bg-siemens-primary/10 text-siemens-primary hover:bg-siemens-primary hover:text-white transition-colors">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+              </svg>
+            </button>
+            
+            <!-- Dots -->
+            <div class="flex items-center space-x-2">
+              <template x-for="(slide, index) in slides" :key="index">
+                <button 
+                  @click="currentSlide = index"
+                  :class="{'bg-siemens-primary': currentSlide === index, 'bg-gray-300': currentSlide !== index}"
+                  class="w-3 h-3 rounded-full transition-colors">
+                </button>
+              </template>
+            </div>
+
+            <button 
+              @click="currentSlide = (currentSlide + 1) % slides.length"
+              class="p-2 rounded-full bg-siemens-primary/10 text-siemens-primary hover:bg-siemens-primary hover:text-white transition-colors">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section x-data="blogManager('project')" x-init="init()" class="bg-siemens-light py-20 px-4">
+      <div class="container mx-auto max-w-screen-xl">
+        <h2 class="text-4xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-siemens-primary to-siemens-secondary">
+          Nos Projets Récents
+        </h2>
+
+        <!-- Error Handling -->
+        <div x-show="error" x-transition.opacity class="max-w-2xl mx-auto mb-8">
+          <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg">
+            <div class="flex">
+              <div class="flex-shrink-0">
+                <svg class="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <div class="ml-3">
+                <p class="text-red-800" x-text="error"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Loading State -->
+        <div x-show="loading" x-transition.opacity class="flex justify-center items-center h-64">
+          <div class="w-16 h-16 border-4 border-siemens-primary border-t-transparent rounded-full animate-spin"></div>
+        </div>
+
+        <!-- Projects Grid -->
+        <div x-show="!loading && !error" x-transition.opacity class="grid md:grid-cols-3 gap-8">
+          <template x-for="post in displayedPosts" :key="post.id">
+            <article class="group bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+              <div class="relative overflow-hidden">
+                <img 
+                  :src="extractBlogImage(post)" 
+                  :alt="post.title"
+                  class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="absolute top-4 right-4">
+                  <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-siemens-primary text-white">
+                    Projet
+                  </span>
+                </div>
+              </div>
+              
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-siemens-gray mb-3 line-clamp-2 group-hover:text-siemens-primary transition-colors" x-text="post.title"></h3>
+                <div class="flex items-center text-sm text-gray-500 mb-4">
+                  <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+                  </svg>
+                  <span x-text="formatDate(post.published)"></span>
+                </div>
+                <p class="text-gray-600 mb-4 line-clamp-3" x-text="truncateContent(post.content)"></p>
+                
+                <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                  <a :href="createFullPostLink(post)" 
+                     class="inline-flex items-center text-siemens-primary hover:text-siemens-secondary transition-colors group">
+                    <span>En savoir plus</span>
+                    <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                    </svg>
+                  </a>
+                  <div class="flex items-center text-sm text-gray-500">
+                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                    </svg>
+                    <span x-text="calculateReadTime(post.content) + ' min'"></span>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </template>
+        </div>
+
+        <!-- Pagination -->
+        <div class="mt-12 flex justify-center items-center space-x-4">
+          <button 
+            @click="prevPage" 
+            :disabled="currentPage === 0"
+            class="inline-flex items-center px-6 py-2 border border-siemens-primary rounded-full text-siemens-primary hover:bg-siemens-primary hover:text-white disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-300"
+          >
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+            </svg>
+            Précédent
+          </button>
+          
+          <div class="flex items-center text-siemens-gray">
+            <span>Page</span>
+            <span class="mx-2 font-semibold text-siemens-primary" x-text="currentPage + 1"></span>
+            <span>sur</span>
+            <span class="ml-2 font-semibold text-siemens-primary" x-text="maxPages + 1"></span>
+          </div>
+          
+          <button 
+            @click="nextPage" 
+            :disabled="currentPage >= maxPages"
+            class="inline-flex items-center px-6 py-2 border border-siemens-primary rounded-full text-siemens-primary hover:bg-siemens-primary hover:text-white disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-300"
+          >
+            Suivant
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="bg-siemens-light py-16 px-4" x-data="blogManager()">
+      <div class="container mx-auto max-w-screen-xl">
+        <h2 class="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-siemens-primary to-siemens-secondary">
+          Blog Insights
+        </h2>
+
+        <!-- Error Handling -->
+        <div x-show="error" x-transition.opacity class="max-w-2xl mx-auto bg-red-50 border-l-4 border-red-500 p-4 mb-8">
+          <div class="flex">
+            <div class="flex-shrink-0">
+              <svg class="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <div class="ml-3">
+              <p class="text-sm text-red-700" x-text="error"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Loading State -->
+        <div x-show="loading" x-transition.opacity class="flex justify-center items-center h-64">
+          <div class="w-16 h-16 border-4 border-siemens-primary border-t-transparent rounded-full animate-spin"></div>
+        </div>
+
+        <!-- Blog Grid -->
+        <div x-show="!loading && !error" x-transition.opacity class="grid md:grid-cols-3 gap-8">
+          <template x-for="post in displayedPosts" :key="post.id">
+            <article class="bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl border border-gray-100">
+              <div class="relative aspect-w-16 aspect-h-9">
+                <img :src="extractBlogImage(post)" :alt="post.title" class="w-full h-48 object-cover transition-transform duration-500 hover:scale-105"/>
+                <div class="absolute top-4 right-4 bg-siemens-primary text-white text-xs font-semibold px-3 py-1 rounded-full">
+                  Blog
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-siemens-gray mb-3 line-clamp-2" x-text="post.title"></h3>
+                <div class="text-sm text-gray-500 mb-4 flex items-center">
+                  <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+                  </svg>
+                  <span x-text="formatDate(post.published)"></span>
+                </div>
+                <p class="text-gray-600 mb-4 line-clamp-3" x-text="truncateContent(post.content)"></p>
+                <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                  <a :href="createFullPostLink(post)" class="inline-flex items-center text-siemens-primary hover:text-siemens-secondary transition-colors">
+                    Read More
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                    </svg>
+                  </a>
+                  <span class="text-sm text-gray-400" x-text="calculateReadTime(post.content) + ' min read'"></span>
+                </div>
+              </div>
+            </article>
+          </template>
+        </div>
+
+        <!-- Pagination -->
+        <div class="mt-12 flex justify-center gap-4">
+          <button 
+            @click="prevPage" 
+            :disabled="currentPage === 0"
+            class="px-6 py-2 rounded-full bg-siemens-primary text-white disabled:opacity-50 disabled:cursor-not-allowed hover:bg-siemens-secondary transition-colors"
+          >
+            Previous
+          </button>
+          <div class="flex items-center text-siemens-gray">
+            Page <span class="mx-2 font-semibold" x-text="currentPage + 1"></span> of
+            <span class="ml-2 font-semibold" x-text="maxPages + 1"></span>
+          </div>
+          <button 
+            @click="nextPage" 
+            :disabled="currentPage >= maxPages"
+            class="px-6 py-2 rounded-full bg-siemens-primary text-white disabled:opacity-50 disabled:cursor-not-allowed hover:bg-siemens-secondary transition-colors"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-gradient-to-br from-siemens-primary to-siemens-secondary py-20 px-6 text-white" id="stats">
+      <div class="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="stat-card p-8 bg-white/10 rounded-lg backdrop-blur-sm">
+          <div class="stat-number text-5xl font-bold opacity-0 transform translate-y-5 transition-all duration-500">
+            14+
+          </div>
+          <p class="text-white/90 mt-4" data-fr="Années d'Expérience" data-en="Years of Experience">
+            Années d'Expérience
+          </p>
+        </div>
+        <div class="stat-card p-8 bg-white/10 rounded-lg backdrop-blur-sm">
+          <div class="stat-number text-5xl font-bold opacity-0 transform translate-y-5 transition-all duration-500">
+            200+
+          </div>
+          <p class="text-white/90 mt-4" data-fr="Projets Réalisés" data-en="Projects Completed">
+            Projets Réalisés
+          </p>
+        </div>
+        <div class="stat-card p-8 bg-white/10 rounded-lg backdrop-blur-sm">
+          <div class="stat-number text-5xl font-bold opacity-0 transform translate-y-5 transition-all duration-500">
+            150+
+          </div>
+          <p class="text-white/90 mt-4" data-fr="Clients Satisfaits" data-en="Satisfied Clients">
+            Clients Satisfaits
+          </p>
+        </div>
+        <div class="stat-card p-8 bg-white/10 rounded-lg backdrop-blur-sm">
+          <div class="stat-number text-5xl font-bold opacity-0 transform translate-y-5 transition-all duration-500">
+            5
+          </div>
+          <p class="text-white/90 mt-4" data-fr="Prix d'Excellence" data-en="Excellence Awards">
+            Prix d'Excellence
+          </p>
+        </div>
+      </div>
+    </section>
+<section class="process-section py-20 bg-siemens-light" id="process">
+  <h2 class="section-title text-4xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-siemens-primary to-siemens-secondary">
+    Notre Processus
+  </h2>
+  <div class="process-timeline relative max-w-5xl mx-auto overflow-hidden">
+    <!-- Timeline Line -->
+    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-1 bg-siemens-primary h-full z-0"></div>
+
+    <!-- Timeline Item 1 -->
+    <div class="timeline-item flex items-center mb-12">
+      <div class="timeline-content w-full md:w-1/2 p-6 bg-white rounded-lg shadow-lg relative mx-4 md:mr-16 transform transition-all duration-500 hover:-translate-y-2" data-aos="fade-right">
+        <h3 class="text-xl font-bold text-siemens-primary mb-2">Consultation</h3>
+        <p class="text-siemens-gray">Analyse approfondie de vos besoins et objectifs spécifiques.</p>
+        <span class="timeline-icon absolute -right-10 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-siemens-primary rounded-full shadow-lg"></span>
+      </div>
+    </div>
+
+    <!-- Timeline Item 2 -->
+    <div class="timeline-item flex flex-row-reverse items-center mb-12">
+      <div class="timeline-content w-full md:w-1/2 p-6 bg-white rounded-lg shadow-lg relative mx-4 md:ml-16 transform transition-all duration-500 hover:-translate-y-2" data-aos="fade-left">
+        <h3 class="text-xl font-bold text-siemens-primary mb-2">Planification</h3>
+        <p class="text-siemens-gray">Élaboration d'une solution sur mesure et d'un plan d'action détaillé.</p>
+        <span class="timeline-icon absolute -left-10 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-siemens-primary rounded-full shadow-lg"></span>
+      </div>
+    </div>
+
+    <!-- Timeline Item 3 -->
+    <div class="timeline-item flex items-center mb-12">
+      <div class="timeline-content w-full md:w-1/2 p-6 bg-white rounded-lg shadow-lg relative mx-4 md:mr-16 transform transition-all duration-500 hover:-translate-y-2" data-aos="fade-right">
+        <h3 class="text-xl font-bold text-siemens-primary mb-2">Exécution</h3>
+        <p class="text-siemens-gray">Mise en œuvre professionnelle avec un souci du détail.</p>
+        <span class="timeline-icon absolute -right-10 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-siemens-primary rounded-full shadow-lg"></span>
+      </div>
+    </div>
+
+    <!-- Timeline Item 4 -->
+    <div class="timeline-item flex flex-row-reverse items-center">
+      <div class="timeline-content w-full md:w-1/2 p-6 bg-white rounded-lg shadow-lg relative mx-4 md:ml-16 transform transition-all duration-500 hover:-translate-y-2" data-aos="fade-left">
+        <h3 class="text-xl font-bold text-siemens-primary mb-2">Suivi</h3>
+        <p class="text-siemens-gray">Maintenance continue et support technique après installation.</p>
+        <span class="timeline-icon absolute -left-10 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-siemens-primary rounded-full shadow-lg"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-siemens-light">
+  <div class="max-w-screen-xl mx-auto px-4">
+    <h2 class="text-4xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-siemens-primary to-siemens-secondary">
+      Contactez-nous
+    </h2>
+    
+    <div class="grid md:grid-cols-2 gap-12">
+      <!-- Contact Form -->
+      <div class="bg-white p-8 rounded-xl shadow-lg">
+        <form class="space-y-6">
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label for="name" class="block text-sm font-medium text-siemens-gray mb-2">Nom</label>
+              <input type="text" id="name" name="name" 
+                     class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-siemens-primary focus:border-transparent transition-all"
+                     placeholder="Votre nom">
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-siemens-gray mb-2">Email</label>
+              <input type="email" id="email" name="email"
+                     class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-siemens-primary focus:border-transparent transition-all"
+                     placeholder="votre@email.com">
+            </div>
+          </div>
+          
+          <div>
+            <label for="subject" class="block text-sm font-medium text-siemens-gray mb-2">Sujet</label>
+            <input type="text" id="subject" name="subject"
+                   class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-siemens-primary focus:border-transparent transition-all"
+                   placeholder="Sujet de votre message">
+          </div>
+          
+          <div>
+            <label for="message" class="block text-sm font-medium text-siemens-gray mb-2">Message</label>
+            <textarea id="message" name="message" rows="4"
+                      class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-siemens-primary focus:border-transparent transition-all resize-none"
+                      placeholder="Votre message"></textarea>
+          </div>
+          
+          <button type="submit" 
+                  class="w-full bg-siemens-primary hover:bg-siemens-secondary text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg flex items-center justify-center group">
+            <span>Envoyer le message</span>
+            <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
+          </button>
+        </form>
+      </div>
+      
+      <!-- Contact Information -->
+      <div class="space-y-8">
+        <!-- Map Container -->
+        <div class="h-64 bg-gray-200 rounded-xl overflow-hidden">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3441.0677963463863!2d-9.373611684885635!3d30.395833981758446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdb3c8050b418df%3A0x4c5c89ba3dcf5e23!2sAit%20Amira%2C%20Morocco!5e0!3m2!1sen!2sus!4v1617646001895!5m2!1sen!2sus" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+          </iframe>
+        </div>
+        
+        <!-- Contact Cards -->
+        <div class="grid gap-6">
+          <div class="bg-white p-6 rounded-xl shadow-lg flex items-start space-x-4 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+            <div class="p-3 bg-siemens-primary/10 rounded-lg">
+              <svg class="w-6 h-6 text-siemens-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-siemens-gray mb-1">Notre Adresse</h3>
+              <p class="text-gray-600">Ait Amira Chtouka Ait Baha, Biougra, MAROC</p>
+            </div>
+          </div>
+          
+          <div class="bg-white p-6 rounded-xl shadow-lg flex items-start space-x-4 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+            <div class="p-3 bg-siemens-primary/10 rounded-lg">
+              <svg class="w-6 h-6 text-siemens-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-siemens-gray mb-1">Email</h3>
+              <a href="mailto:hossainerradi@gmail.com" class="text-siemens-primary hover:text-siemens-secondary transition-colors">
+                hossainerradi@gmail.com
+              </a>
+            </div>
+          </div>
+          
+          <div class="bg-white p-6 rounded-xl shadow-lg flex items-start space-x-4 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+            <div class="p-3 bg-siemens-primary/10 rounded-lg">
+              <svg class="w-6 h-6 text-siemens-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-siemens-gray mb-1">Téléphone</h3>
+              <a href="tel:+212664759573" class="text-siemens-primary hover:text-siemens-secondary transition-colors">
+                +212 664 759 573
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const statNumbers = document.querySelectorAll(".stat-number");
+
+        const observer = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+              }
+            });
+          },
+          { threshold: 0.5 }
+        ); // Trigger animation when 50% of the element is visible
+
+        statNumbers.forEach((number) => {
+          observer.observe(number);
+        });
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const timelineItems = document.querySelectorAll(".timeline-item");
+
+        const observerOptions = {
+          root: null,
+          threshold: 0.2,
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        }, observerOptions);
+
+        timelineItems.forEach((item) => observer.observe(item));
+      });
+    </script>
+    <script>
+      // Initialize AOS
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+
+      // Language switching functionality
+      function switchLanguage(lang) {
+        document.querySelectorAll("[data-" + lang + "]").forEach((element) => {
+          element.textContent = element.getAttribute("data-" + lang);
+        });
+
+        document
+          .querySelectorAll(".language-switch button")
+          .forEach((button) => {
+            button.classList.remove("active");
+            if (button.textContent.toLowerCase() === lang.toUpperCase()) {
+              button.classList.add("active");
+            }
+          });
+
+        document.documentElement.lang = lang;
+      }
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+      defer
+    ></script>
+    <script>
+      // Intersection Observer for scroll animations
+      document.addEventListener('DOMContentLoaded', function() {
+        const observerOptions = {
+          threshold: 0.2
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('scroll-animate');
+            }
+          });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+          observer.observe(section);
+        });
+
+        // Add scroll progress bar
+        const progressBar = document.createElement('div');
+        progressBar.className = 'scroll-progress-bar';
+        document.body.appendChild(progressBar);
+
+        window.addEventListener('scroll', () => {
+          const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
+          const progress = (window.scrollY / windowHeight) * 100;
+          progressBar.style.transform = `scaleX(${progress}%)`;
+        });
+      });
+    </script>
+    <!-- Footer -->
+    <footer class="bg-gradient-to-br from-siemens-primary to-siemens-secondary text-white py-16 px-8 relative overflow-hidden">
+      <div class="footer-content max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div class="footer-section">
+          <h3 class="text-2xl font-bold mb-6">Hossain Erradi</h3>
+          <div class="space-y-4">
+            <div class="flex items-center space-x-3">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+              <span class="text-white/90">Ait Amira Chtouka Ait Baha, Biougra, MAROC</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+              <a href="mailto:hossainerradi@gmail.com" class="text-white/90 hover:text-white transition-colors">
+                hossainerradi@gmail.com
+              </a>
+            </div>
+            <div class="flex items-center space-x-3">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+              </svg>
+              <span class="text-white/90">+212 664 759 573</span>
+            </div>
+          </div>
+          <div class="mt-6 flex space-x-4">
+            <a href="https://www.linkedin.com/in/hossain-erradi/" target="_blank" class="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+              </svg>
+            </a>
+            <a href="#" class="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3 class="text-2xl font-bold mb-6">Services</h3>
+          <ul class="space-y-3">
+            <li>
+              <a href="#services" class="text-white/90 hover:text-white transition-colors flex items-center space-x-2">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Installation Électrique</span>
+              </a>
+            </li>
+            <li>
+              <a href="#services" class="text-white/90 hover:text-white transition-colors flex items-center space-x-2">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Automatisation</span>
+              </a>
+            </li>
+            <li>
+              <a href="#services" class="text-white/90 hover:text-white transition-colors flex items-center space-x-2">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Énergie Solaire</span>
+              </a>
+            </li>
+            <li>
+              <a href="#services" class="text-white/90 hover:text-white transition-colors flex items-center space-x-2">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Maintenance Industrielle</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3 class="text-2xl font-bold mb-6">Liens Rapides</h3>
+          <ul class="space-y-3">
+            <li>
+              <a href="#about" class="text-white/90 hover:text-white transition-colors flex items-center space-x-2">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>À Propos</span>
+              </a>
+            </li>
+            <li>
+              <a href="#projects" class="text-white/90 hover:text-white transition-colors flex items-center space-x-2">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Projets</span>
+              </a>
+            </li>
+            <li>
+              <a href="#blog" class="text-white/90 hover:text-white transition-colors flex items-center space-x-2">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Blog</span>
+              </a>
+            </li>
+            <li>
+              <a href="#contact" class="text-white/90 hover:text-white transition-colors flex items-center space-x-2">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Contact</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-12 pt-8 border-t border-white/10">
+        <div class="max-w-screen-xl mx-auto text-center">
+          <p class="text-white/90">&copy; 2024 Hossain Erradi. Tous droits réservés.</p>
+          <div class="mt-4 flex justify-center space-x-4">
+            <span class="px-4 py-2 bg-white/10 rounded-full text-sm">Conforme GDPR</span>
+            <span class="px-4 py-2 bg-white/10 rounded-full text-sm">Certifié ISO 9001</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div id="keyboard-shortcuts" class="fixed bottom-4 right-4 bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg text-sm hidden" role="tooltip">
+  <h3 class="font-bold text-siemens-gray mb-2">Raccourcis clavier:</h3>
+  <ul class="space-y-1 text-gray-600">
+    <li>Alt + ↑: Section précédente</li>
+    <li>Alt + ↓: Section suivante</li>
+    <li>Esc: Fermer le menu</li>
+  </ul>
+</div>
+
+<button 
+  onclick="document.getElementById('keyboard-shortcuts').classList.toggle('hidden')"
+  class="fixed bottom-4 right-4 bg-siemens-primary text-white p-3 rounded-full shadow-lg hover:bg-siemens-secondary transition-colors"
+  aria-label="Afficher les raccourcis clavier">
+  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+  </svg>
+</button>
+  </body>
+</html>
